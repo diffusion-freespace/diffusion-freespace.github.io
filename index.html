@@ -185,7 +185,7 @@
   </div>
 </section>
 
-
+<!-- 
 <section class="hero is-light is-small">
   <div class="hero-body">
     <div class="container">
@@ -241,7 +241,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 
 <section class="section">
@@ -252,31 +252,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We present the first method capable of photorealistically reconstructing a non-rigidly
-            deforming scene using photos/videos captured casually from mobile phones.
-          </p>
-          <p>
-            Our approach augments neural radiance fields
-            (NeRF) by optimizing an
-            additional continuous volumetric deformation field that warps each observed point into a
-            canonical 5D NeRF.
-            We observe that these NeRF-like deformation fields are prone to local minima, and
-            propose a coarse-to-fine optimization method for coordinate-based models that allows for
-            more robust optimization.
-            By adapting principles from geometry processing and physical simulation to NeRF-like
-            models, we propose an elastic regularization of the deformation field that further
-            improves robustness.
-          </p>
-          <p>
-            We show that <span class="dnerf">Nerfies</span> can turn casually captured selfie
-            photos/videos into deformable NeRF
-            models that allow for photorealistic renderings of the subject from arbitrary
-            viewpoints, which we dub <i>"nerfies"</i>. We evaluate our method by collecting data
-            using a
-            rig with two mobile phones that take time-synchronized photos, yielding train/validation
-            images of the same pose at different viewpoints. We show that our method faithfully
-            reconstructs non-rigidly deforming scenes and reproduces unseen views with high
-            fidelity.
+            Drivable Freespace prediction is a fundamental and crucial problem in autonomous driving. Recent works have addressed the problem by representing the entire non-obstacle road regions as the freespace. In contrast our aim is to estimate the driving corridors that are a navigable subset of the entire road region. Unfortunately, existing corridor estimation methods directly assume a BEV centric representation, which is hard to obtain. In contrast, we frame drivable freespace corridor prediction as a pure image perception task, using only monocular camera input. However such a formulation poses several challenges as one doesn’t have the corresponding data for such freespace corridor segments in the image. Consequently, we develop a novel self-supervised approach for freespace sample generation by leveraging future ego trajectories and front-view camera images, making the process of visual corridor estimation dependent on the ego trajectory. We then employ a diffusion process to model the distribution of such segments in the image. However, the existing binary mask based representation for a segment poses many limitations. Therefore, we introduce ContourDiff, a specialized diffusion-based architecture that denoises over contour points rather than relying on binary mask representations, enabling structured and interpretable freespace predictions. We evaluate our approach qualitatively and quantitatively on both <b>nuScenes</b> and <b>CARLA</b>, demonstrating its effectiveness in accurately predicting safe multimodal navigable corridors in the image.
           </p>
         </div>
       </div>
@@ -288,8 +264,12 @@
       <div class="column is-four-fifths">
         <h2 class="title is-3">Video</h2>
         <div class="publication-video">
-          <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
-                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <!-- <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+            <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/videos/submission_video.mp4"
+                      type="video/mp4">
+            </video>
         </div>
       </div>
     </div>
@@ -306,13 +286,13 @@
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+          <h2 class="title is-3">nuScenes</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            Comparison of a non generative baseline YOLOv11 and a generative baseline SegDiff for image segmentation through diffusion with our proposed ContourDiff,
+            on nuScenes.
           </p>
           <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/dollyzoom-stacked.mp4"
+            <source src="./static/videos/nusc_comp.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -321,15 +301,15 @@
 
       <!-- Matting. -->
       <div class="column">
-        <h2 class="title is-3">Matting</h2>
+        <h2 class="title is-3">CARLA</h2>
         <div class="columns is-centered">
           <div class="column content">
             <p>
-              As a byproduct of our method, we can also solve the matting problem by ignoring
-              samples that fall outside of a bounding box during rendering.
+            Comparison of a non generative baseline YOLOv11 and a generative baseline SegDiff for image segmentation through diffusion with our proposed ContourDiff,
+            on CARLA.
             </p>
             <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/matting.mp4"
+              <source src="./static/videos/carla_comp.mp4"
                       type="video/mp4">
             </video>
           </div>
@@ -340,11 +320,10 @@
     <!--/ Matting. -->
 
     <!-- Animation. -->
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Animation</h2>
 
-        <!-- Interpolating. -->
         <h3 class="title is-4">Interpolating states</h3>
         <div class="content has-text-justified">
           <p>
@@ -376,9 +355,8 @@
           </div>
         </div>
         <br/>
-        <!--/ Interpolating. -->
 
-        <!-- Re-rendering. -->
+
         <h3 class="title is-4">Re-rendering the input video</h3>
         <div class="content has-text-justified">
           <p>
@@ -396,7 +374,7 @@
             <source src="./static/videos/replay.mp4"
                     type="video/mp4">
           </video>
-        </div>
+        </div> -->
         <!--/ Re-rendering. -->
 
       </div>
@@ -405,7 +383,7 @@
 
 
     <!-- Concurrent Work. -->
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
@@ -428,14 +406,14 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Concurrent Work. -->
 
   </div>
 </section>
 
 
-<section class="section" id="BibTeX">
+<!-- <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{park2021nerfies,
@@ -445,7 +423,7 @@
   year      = {2021},
 }</code></pre>
   </div>
-</section>
+</section> -->
 
 
 <footer class="footer">
