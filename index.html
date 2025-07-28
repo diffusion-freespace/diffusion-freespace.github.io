@@ -177,71 +177,12 @@
            class="teaser-image">
     </div>
       <h2 class="subtitle has-text-centered">
-        <span class="dnerf">Diffusion-FS</span> is a self self-supervised approach for freespace prediction using monocular camera images. It takes in a dataset of raw driving logs containing image and ego trajectory pairs. Our self-supervised method processes such an
+        <span class="dnerf">Diffusion-FS</span> is a self-supervised approach for freespace prediction using monocular camera images. It takes in a dataset of raw driving logs containing image and ego trajectory pairs. Our self-supervised method processes such an
 unannotated dataset to generate free-space segments essential for autonomous driving.
       </h2>
     </div>
   </div>
 </section>
-
-
-<!-- 
-<section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/steve.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/chair-tp.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/shiba.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 
 <section class="section">
@@ -276,154 +217,60 @@ unannotated dataset to generate free-space segments essential for autonomous dri
     <!--/ Paper video. -->
   </div>
 </section>
-
-
 <section class="section">
   <div class="container is-max-desktop">
 
+    <!-- nuScenes Row -->
     <div class="columns is-centered">
-
-      <!-- Visual Effects. -->
       <div class="column">
-        <div class="content">
+        <div class="content has-text-centered">
           <h2 class="title is-3">nuScenes</h2>
           <p>
             Comparison of a non generative baseline YOLOv11 and a generative baseline SegDiff for image segmentation through diffusion with our proposed ContourDiff,
             on nuScenes.
           </p>
           <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/nusc_comp.mp4"
-                    type="video/mp4">
+            <source src="./static/videos/nusc_comp_fixed.mp4" type="video/mp4">
           </video>
         </div>
       </div>
-      <!--/ Visual Effects. -->
+    </div>
 
-      <!-- Matting. -->
+    <!-- CARLA Row -->
+    <div class="columns is-centered">
       <div class="column">
-        <h2 class="title is-3">CARLA</h2>
-        <div class="columns is-centered">
-          <div class="column content">
-            <p>
+        <div class="content has-text-centered">
+          <h2 class="title is-3">CARLA</h2>
+          <p>
             Comparison of a non generative baseline YOLOv11 and a generative baseline SegDiff for image segmentation through diffusion with our proposed ContourDiff,
             on CARLA.
-            </p>
-            <video id="matting-video" controls playsinline height="100%">
-              <source src="./static/videos/carla_comp.mp4"
-                      type="video/mp4">
-            </video>
-          </div>
-
-        </div>
-      </div>
-    </div>
-    <!--/ Matting. -->
-
-    <!-- Animation. -->
-    <!-- <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Animation</h2>
-
-        <h3 class="title is-4">Interpolating states</h3>
-        <div class="content has-text-justified">
-          <p>
-            We can also animate the scene by interpolating the deformation latent codes of two input
-            frames. Use the slider here to linearly interpolate between the left frame and the right
-            frame.
           </p>
-        </div>
-        <div class="columns is-vcentered interpolation-panel">
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_start.jpg"
-                 class="interpolation-image"
-                 alt="Interpolate start reference image."/>
-            <p>Start Frame</p>
-          </div>
-          <div class="column interpolation-video-column">
-            <div id="interpolation-image-wrapper">
-              Loading...
-            </div>
-            <input class="slider is-fullwidth is-large is-info"
-                   id="interpolation-slider"
-                   step="1" min="0" max="100" value="0" type="range">
-          </div>
-          <div class="column is-3 has-text-centered">
-            <img src="./static/images/interpolate_end.jpg"
-                 class="interpolation-image"
-                 alt="Interpolation end reference image."/>
-            <p class="is-bold">End Frame</p>
-          </div>
-        </div>
-        <br/>
-
-
-        <h3 class="title is-4">Re-rendering the input video</h3>
-        <div class="content has-text-justified">
-          <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
-          </p>
-        </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
+          <video id="matting-video" controls playsinline height="100%">
+            <source src="./static/videos/carla_comp_fixed.mp4" type="video/mp4">
           </video>
-        </div> -->
-        <!--/ Re-rendering. -->
-
-      </div>
-    </div>
-    <!--/ Animation. -->
-
-
-    <!-- Concurrent Work. -->
-    <!-- <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-3">Related Links</h2>
-
-        <div class="content has-text-justified">
-          <p>
-            There's a lot of excellent work that was introduced around the same time as ours.
-          </p>
-          <p>
-            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
-          </p>
-          <p>
-            <a href="https://www.albertpumarola.com/research/D-NeRF/index.html">D-NeRF</a> and <a href="https://gvv.mpi-inf.mpg.de/projects/nonrigid_nerf/">NR-NeRF</a>
-            both use deformation fields to model non-rigid scenes.
-          </p>
-          <p>
-            Some works model videos with a NeRF by directly modulating the density, such as <a href="https://video-nerf.github.io/">Video-NeRF</a>, <a href="https://www.cs.cornell.edu/~zl548/NSFF/">NSFF</a>, and <a href="https://neural-3d-video.github.io/">DyNeRF</a>
-          </p>
-          <p>
-            There are probably many more by the time you are reading this. Check out <a href="https://dellaert.github.io/NeRF/">Frank Dellart's survey on recent NeRF papers</a>, and <a href="https://github.com/yenchenlin/awesome-NeRF">Yen-Chen Lin's curated list of NeRF papers</a>.
-          </p>
         </div>
       </div>
-    </div> -->
-    <!--/ Concurrent Work. -->
+    </div>
 
   </div>
 </section>
 
 
-<!-- <section class="section" id="BibTeX">
+<section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
-}</code></pre>
-  </div>
-</section> -->
+    <pre><code>@misc{gupta2025diffusionfsmultimodalfreespaceprediction,
+      title={Diffusion-FS: Multimodal Free-Space Prediction via Diffusion for Autonomous Driving}, 
+      author={Keshav Gupta and Tejas S. Stanley and Pranjal Paul and Arun K. Singh and K. Madhava Krishna},
+      year={2025},
+      eprint={2507.18763},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2507.18763}, 
+}
+</code></pre>
+</div>
+</section>
 
 
 <footer class="footer">
